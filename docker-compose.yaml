@@ -1,5 +1,18 @@
 version: '3.8'
 services:
+  frontend:
+    build:
+      context: ./frontend
+    restart: unless-stopped
+    command: npm run dev
+    tty: true
+    stdin_open: true
+    ports:
+      - '5173:5173'
+    volumes:
+      - ./frontend:/frontend
+      - node_modules:/frontend/node_modules
+
   backend:
     build:
       context: ./backend
@@ -29,3 +42,4 @@ services:
 
 volumes:
   pgdata:
+  node_modules:
