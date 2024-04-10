@@ -4,7 +4,8 @@ services:
     build:
       context: ./frontend
     restart: unless-stopped
-    command: npm run dev
+    # command: npm run dev
+    command: tail -f /dev/null
     tty: true
     stdin_open: true
     ports:
