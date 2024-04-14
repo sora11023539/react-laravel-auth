@@ -7,7 +7,7 @@ export const Register = () => {
   const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
-  const [setUser, setToken] = useStateContext();
+  const { setUser, setToken } = useStateContext();
 
   const Submit = (ev) => {
     ev.preventDefault();
@@ -17,7 +17,7 @@ export const Register = () => {
       password: passwordRef.current.value,
     };
     axiosClient
-      .post('register', payload)
+      .post('/register', payload)
       .then(({ data }) => {
         setUser(data.user);
         setToken(data.token);
