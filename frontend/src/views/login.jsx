@@ -8,6 +8,7 @@ export const Login = () => {
   return (
     <div className="login-signup-form animated fadeinDown">
       <div className="form">
+        <h1 className="title">Login to your account</h1>
         <form onSubmit={Submit}>
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
